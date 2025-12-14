@@ -1,12 +1,14 @@
+import matplotlib
+matplotlib.use("Agg")
+
 from flask import Flask, request, jsonify, render_template
 import joblib
 import numpy as np
 import pandas as pd
-
-# NEW imports for dynamic graph
 import matplotlib.pyplot as plt
 import base64
 from io import BytesIO
+
 
 app = Flask(__name__)
 
