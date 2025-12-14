@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Smart Crop Prediction</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <h2>Smart Crop Prediction (ACSM)</h2>
+
+        <!-- Dark mode toggle -->
+        <button id="themeToggle" onclick="toggleTheme()">🌙 Dark Mode</button>
+
+        <p>Upload a CSV file containing soil and climate parameters</p>
+
+        <input type="file" id="csvFile" name="file" accept=".csv">
+
+        <button onclick="uploadCSV()">Predict</button>
+
+        <!-- Prediction Result -->
+        <h3 id="result"></h3>
+
+        <!-- 🔹 Dynamic confidence graph (per input) -->
+        <div id="dynamicGraph" style="display:none; margin-top:20px;">
+            <h4>Prediction Confidence (Input-Based)</h4>
+            <img id="confidenceImg" style="max-width:600px;">
+        </div>
+
+        <!-- 🔹 Static graphs (model-level, hidden initially) -->
+        <div id="graphs" style="display: none;">
+
+            <hr>
+
+            <h3>Model Output Graphs</h3>
+
+            <h4>Feature Importance</h4>
+            <img src="/static/feature_importance.png" width="600">
+
+            <h4>Mahalanobis Distance Ranking</h4>
+            <img src="/static/mahalanobis_ranking.png" width="600">
+
+            <h4>Model Performance Metrics</h4>
+            <img src="/static/performance_metrics.png" width="600">
+
+        </div>
+
+    </div>
+
+    <!-- JS -->
+    <script src="/static/script.js"></script>
+
+</body>
+</html>
